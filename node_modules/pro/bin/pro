@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var prototyper = require('../')
+  , pathUtils = require('path')
+  , program = require('commander');
+
+/**
+ * Option parsing
+ */
+program
+  .version(prototyper.version)
+  .option('-d, --dir [dir]', 'Directory containing the prototype sources', ".")
+  .option('-l, --log [level]', 'Controls how verbose the logs will be, can be debug, info, warn and error', 'info')
+  .option('-o, --output [dir]', 'Output directory for static web content', "_build")
+  .parse(process.argv);
+
+// Host and port
+var host = '0.0.0.0'
+  , port = program.args.pop() || '8080'
+
+if (~port.indexOf(':')) {
+  port = port.split(':');
+  host = port[0];
+  port = port[1];
+}
+
+var options =
+  { host: host
+  , port: port
+  , dir: pathUtils.resolve(program.dir)
+  , logLevel: program.log
+  , output: pathUtils.resolve(program.output)
+  };
+
+/**
+ * Start prototyper
+ */
+prototyper.start(options);

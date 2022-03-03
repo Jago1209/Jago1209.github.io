@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formularios dinamicos">
+    <meta name="keywords" content="Formularios">
+    
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>  
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css"/>
+    
+    <link rel="stylesheet" href="./css/style.scss"/>
+    <link rel="stylesheet" href="./css/dropzone.css"/>
+
+
+    <title>.</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="response_query_out">
+            <div class="add-listing-section">
+                <div class="add-listing-headline">
+                    <h3>
+                        <strong class="headline-with-separator"><div id="response_titulo"></div></strong>
+                    </h3>
+                </div>
+    
+                <form name='' id='DinamicForm_'>
+                        <div class='style-1'>
+    
+                            <!-- Tabs Navigation -->
+                            <ul class='nav nav-tabs' id='tabs_nav_name'>
+                            </ul>
+    
+                            <!-- Tabs Content -->
+                            <div class='tab-content' id="id_container">
+                            </div>
+
+                        </div>
+                        <div  id="response_query" class="row with-forms">
+                            <div id="gifCarga">
+                                <h5> <img src="./images/ajax-loader.gif" > Cargado Formulario...</h5> 
+                            </div>
+                        </div>        
+                </form>			
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

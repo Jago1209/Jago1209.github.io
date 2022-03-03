@@ -1,0 +1,9 @@
+// variables:
+$tablet-width: 770px;
+
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
